@@ -43,11 +43,11 @@ export default function(state = initialState, action) {
     case GET_CARTLIST:
       return state; 
     case ADD_TO_CART:
-    console.log(action.payload)
+    console.log(state.addedToCart)
       return {
         ...state,
         addedToCart: [
-          ...state.addedToCart
+          ...state.addedToCart,  {...action.payload, noOfItems: action.noOfItems}
         ]
       };   
     default:
