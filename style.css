@@ -36,6 +36,15 @@ ul{
   margin: 10px;
 }
 
-.item-description{
-  
+.item-description input{
+    width: 30px;
+}
+
+.item-description button{
+   background-color: bisque;
+   border-color: transparent
+}
+
+.item-description div{
+  margin: 10px 0;
 }
