@@ -55,3 +55,12 @@ ul{
   border: 1px solid bisque;
   padding: 10px;
 }
+
+.badge{
+  border-radius: 50%;
+  background-color: rgb(231, 128, 128);
+  min-width:10px;
+  min-height:10px;
+  padding: 3px;
+  text-align: center;
+}
