@@ -20,7 +20,7 @@ class CartItemDescription extends React.Component {
         <div><img src={cartItem.thumbnail} height="100" width="100" /></div>
         <div><i>{cartItem.description}</i></div>
         <div><button>+</button><input type="number"/><button>-</button></div>
-        <div><button>Add to Cart</button></div>
+        <div><button className="add-btn">Add to Cart</button></div>
       </div>
     );
   }

@@ -42,9 +42,15 @@ ul{
 
 .item-description button{
    background-color: bisque;
-   border-color: transparent
+   border-color: transparent;
+   cursor: pointer;
 }
 
 .item-description div{
   margin: 10px 0;
+}
+
+.add-btn{
+  border: 1px solid bisque;
+  padding: 10px;
 }
