@@ -18,15 +18,14 @@ header{
 ul{
   list-style-type: none;
   display: flex;
-  /* flex-wrap:  */
+  flex-wrap: wrap;
   padding-inline-start: 0;
 }
 
 .list-item{
   border: 1px dotted grey;
   border-radius: 5px;
-  width:30%;
-  min-width:30%;
+  min-width:40%;
   max-width: 50%;
   margin: 10px;
 }
