@@ -1,18 +1,29 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getCartList, addToCart } from "../store/actions";
-import {NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 class Header extends React.Component {
-
   render() {
+    console.log(
+      this.props.addedToCart.reduce(function(acc, item) {
+        return acc + item.noOfItems;
+      }, 0)
+    );
     return (
       <header>
-         <NavLink exact activeClassName="active" to="/Cart">
-              Cart
-            </NavLink>
+        <NavLink exact activeClassName="active" to="/Cart">
+          Cart
+        </NavLink>
         <div>
-          Cart <span className="badge">{this.props.addedToCart? this.props.addedToCart.length: 0}</span>
+          Cart{" "}
+          <span className="badge">
+            {this.props.addedToCart
+              ? this.props.addedToCart.reduce(function(acc, item) {                
+                  return acc + item.noOfItems;
+                }, 0)
+              : 0}
+          </span>
         </div>
       </header>
     );
