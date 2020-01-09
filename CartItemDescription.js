@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getCartList } from "./store/actions";
+import { getCartList, addToCart } from "./store/actions";
 
 class CartItemDescription extends React.Component {
   constructor() {
@@ -8,6 +8,13 @@ class CartItemDescription extends React.Component {
     this.state = {
       noOfItems: 1
     };
+  }
+
+  componentWillMount () {
+    let cartItem = this.props.cartList.find(item => {
+      return this.props.match.params.id === item.id;
+    });
+    this.setState({item: cartItem})
   }
 
   addNoOfItems = () => {
@@ -24,27 +31,23 @@ class CartItemDescription extends React.Component {
 
   handleInputChange = event => {
     this.setState({ noOfItems: event.target.value });
-    console.log(this.state.noOfItems);
   };
 
   addToCart = () => {
-    
+    this.props.addToCart(this.state.item, this.state.noOfItems)
   }
 
   render() {
-    let cartItem = this.props.cartList.find(item => {
-      return this.props.match.params.id === item.id;
-    });
     return (
       <div className="text-center item-description">
         <div>
-          <i>Description of </i>: {cartItem.itemName}
+          <i>Description of </i>: {this.state.item.itemName}
         </div>
         <div>
-          <img src={cartItem.thumbnail} height="100" width="100" />
+          <img src={this.state.item.thumbnail} height="100" width="100" />
         </div>
         <div>
-          <i>{cartItem.description}</i>
+          <i>{this.state.item.description}</i>
         </div>
         <div>
           <button onClick={this.addNoOfItems}>+</button>
@@ -71,5 +74,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCartList }
+  { getCartList, addToCart }
 )(CartItemDescription);
