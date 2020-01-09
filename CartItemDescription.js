@@ -5,8 +5,27 @@ import { getCartList } from "./store/actions";
 class CartItemDescription extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      noOfItems: 1
+    };
   }
+
+  addNoOfItems = () => {
+    this.setState({ noOfItems: Number(this.state.noOfItems) + 1 });
+    console.log(this.state.noOfItems);
+  };
+
+  removeNoOfItems = () => {
+    if (this.state.noOfItems > 0) {
+      this.setState({ noOfItems: Number(this.state.noOfItems) - 1 });
+      console.log(this.state.noOfItems);
+    }
+  };
+
+  handleInputChange = event => {
+    this.setState({ noOfItems: event.target.value });
+    console.log(this.state.noOfItems);
+  };
 
   render() {
     let cartItem = this.props.cartList.find(item => {
@@ -17,10 +36,24 @@ class CartItemDescription extends React.Component {
         <div>
           <i>Description of </i>: {cartItem.itemName}
         </div>
-        <div><img src={cartItem.thumbnail} height="100" width="100" /></div>
-        <div><i>{cartItem.description}</i></div>
-        <div><button>+</button><input type="number"/><button>-</button></div>
-        <div><button className="add-btn">Add to Cart</button></div>
+        <div>
+          <img src={cartItem.thumbnail} height="100" width="100" />
+        </div>
+        <div>
+          <i>{cartItem.description}</i>
+        </div>
+        <div>
+          <button onClick={this.addNoOfItems}>+</button>
+          <input
+            type="number"
+            value={this.state.noOfItems}
+            onChange={this.handleInputChange}
+          />
+          <button onClick={this.removeNoOfItems}>-</button>
+        </div>
+        <div>
+          <button className="add-btn">Add to Cart</button>
+        </div>
       </div>
     );
   }
