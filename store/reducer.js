@@ -1,4 +1,4 @@
-import { GET_CARTLIST } from './actionTypes';
+import { GET_CARTLIST, ADD_TO_CART } from './actionTypes';
 
 export const initialState = {
   cartList: [
@@ -34,13 +34,22 @@ export const initialState = {
       description: 'Description of 6',
       thumbnail:'https://via.placeholder.com/150/602b9e',
     },
-  ]
+  ],
+  addedToCart: []
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_CARTLIST:
-      return state;    
+      return state; 
+    case ADD_TO_CART:
+    console.log(action.payload)
+      return {
+        ...state,
+        addedToCart: [
+          ...state.addedToCart
+        ]
+      };   
     default:
       return state;
   }

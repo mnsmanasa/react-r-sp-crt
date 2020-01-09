@@ -27,6 +27,10 @@ class CartItemDescription extends React.Component {
     console.log(this.state.noOfItems);
   };
 
+  addToCart = () => {
+    
+  }
+
   render() {
     let cartItem = this.props.cartList.find(item => {
       return this.props.match.params.id === item.id;
@@ -52,7 +56,9 @@ class CartItemDescription extends React.Component {
           <button onClick={this.removeNoOfItems}>-</button>
         </div>
         <div>
-          <button className="add-btn">Add to Cart</button>
+          <button className="add-btn" onClick={this.addToCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     );
