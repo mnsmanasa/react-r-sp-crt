@@ -9,3 +9,24 @@ header{
   border-bottom: 1px solid black;
   padding: 0 10px;
 }
+
+.list-item a{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul{
+  list-style-type: none;
+  display: flex;
+  /* flex-wrap:  */
+  padding-inline-start: 0;
+}
+
+.list-item{
+  border: 1px dotted grey;
+  border-radius: 5px;
+  width:30%;
+  min-width:30%;
+  max-width: 50%;
+  margin: 10px;
+}
