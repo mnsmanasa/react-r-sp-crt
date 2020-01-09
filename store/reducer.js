@@ -1,23 +1,39 @@
-import { GET_CARTLIST } from "./actionTypes";
+import { GET_CARTLIST } from './actionTypes';
 
 export const initialState = {
   cartList: [
     {
-      cartItem: "1",
-      description: "first"
+      id: '1',
+      itemName: 'A',
+      description: 'Description of 1',
+      thumbnail:'https://via.placeholder.com/150/602b9e',
     },
     {
-      cartItem: "2",
-      description: "second"
+      id: '2',
+      itemName: 'B',
+      description: 'Description of 2',
+      thumbnail:'https://via.placeholder.com/150/602b9e',
+    },{
+      id: '3',
+      itemName: 'C',
+      description: 'Description of 3',
+      thumbnail:'https://via.placeholder.com/150/602b9e',
+    },{
+      id: '4',
+      itemName: 'D',
+      description: 'Description of 4',
+      thumbnail:'https://via.placeholder.com/150/602b9e',
+    },{
+      id: '5',
+      itemName: 'E',
+      description: 'Description of 5',
+      thumbnail:'https://via.placeholder.com/150/602b9e',
+    },{
+      id: '6',
+      itemName: 'F',
+      description: 'Description of 6',
+      thumbnail:'https://via.placeholder.com/150/602b9e',
     },
-    {
-      cartItem: "3",
-      description: "third"
-    },
-    {
-      cartItem: "4",
-      description: "fourth"
-    }
   ]
 };
 

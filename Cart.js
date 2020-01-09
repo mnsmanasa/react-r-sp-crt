@@ -14,13 +14,13 @@ class Cart extends React.Component {
       <ul>
         {this.props.cartList.map(item => {
           return (
-            <li className="list-item" key={item.cartItem}>
+            <li className="list-item" key={item.id}>
               <NavLink
                 exact
                 activeClassName="active"
-                to={`/Cart/${item.cartItem}`}
+                to={`/Cart/${item.id}`}
               >
-                {item.cartItem}
+                {item.itemName}
               </NavLink>
             </li>
           );
