@@ -10,11 +10,11 @@ class CartItemDescription extends React.Component {
     };
   }
 
-  componentWillMount () {
+  componentWillMount() {
     let cartItem = this.props.cartList.find(item => {
       return this.props.match.params.id === item.id;
     });
-    this.setState({item: cartItem})
+    this.setState({ item: cartItem });
   }
 
   addNoOfItems = () => {
@@ -34,8 +34,10 @@ class CartItemDescription extends React.Component {
   };
 
   addToCart = () => {
-    this.props.addToCart(this.state.item, this.state.noOfItems)
-  }
+    if (this.state.noOfItems > 0) {
+      this.props.addToCart(this.state.item, this.state.noOfItems);
+    }
+  };
 
   render() {
     return (
