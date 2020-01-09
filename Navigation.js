@@ -6,28 +6,17 @@ import {
   Route
 } from "react-router-dom";
 import Cart from './Cart';
+import Home from './Home';
 import CartFilters from './CartFilters'
 
 
 class Navigation extends React.Component {
   render() {
     return (
-      <Router>
-        <ul>
-          <li>
-            <NavLink exact activeClassName="active" to="/">
-              Cart
-            </NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="active" to="/cart-filters">
-              Filter
-            </NavLink>
-          </li>
-        </ul>
-        <hr />
+      <Router>    
         <Switch>
-          <Route exact path="/" component={Cart} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/cart" component={Cart} />
           <Route path="/cart-filters" component={CartFilters} />
         </Switch>
       </Router>

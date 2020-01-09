@@ -1,4 +1,7 @@
 import React from "react";
+import {
+  NavLink
+} from "react-router-dom";
 
 class Cart extends React.Component {
   constructor() {
@@ -31,7 +34,11 @@ class Cart extends React.Component {
         Cart
         <ul>
           {this.state.cartList.map(item => {
-            return <li key={item.cartItem}>{item.cartItem}</li>;
+            return (
+              <li key={item.cartItem}>
+                <NavLink exact activeClassName="active" to={`/Cart/${item.cartItem}`}>{item.cartItem}</NavLink>
+              </li>
+            );
           })}
         </ul>
       </div>
