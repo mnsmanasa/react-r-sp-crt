@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { getCartList } from "./store/actions";
 
 class CartItemDescription extends React.Component {
   constructor() {
@@ -7,9 +9,19 @@ class CartItemDescription extends React.Component {
   }
 
   render() {
-    console.log(this.props.match.params.id)
-    return <div>description: {this.props.match.params.id}</div>;
+    console.log(this.props.match.params.id, this.props.cartList);
+    let cartItem = this.props.cartList.find(item => {
+      return this.props.match.params.id === item.cartItem
+    });
+    return <div>description: {cartItem.description}</div>;
   }
 }
 
-export default CartItemDescription;
+const mapStateToProps = state => ({
+  cartList: state.cartList
+});
+
+export default connect(
+  mapStateToProps,
+  { getCartList }
+)(CartItemDescription);
