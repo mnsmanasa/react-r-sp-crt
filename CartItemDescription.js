@@ -10,7 +10,7 @@ class CartItemDescription extends React.Component {
     };
   }
 
-  componentWillMount () {
+  UNSAFE_componentWillMount () {
     let cartItem = this.props.cartList.find(item => {
       return this.props.match.params.id === item.id;
     });
