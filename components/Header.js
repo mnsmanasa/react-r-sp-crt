@@ -19,7 +19,7 @@ class Header extends React.Component {
           Cart{" "}
           <span className="badge">
             {this.props.addedToCart
-              ? this.props.addedToCart.reduce(function(acc, item) {                
+              ? this.props.addedToCart.reduce((acc, item) => {                
                   return acc + item.noOfItems;
                 }, 0)
               : 0}
