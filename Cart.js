@@ -1,33 +1,31 @@
 import React from "react";
-import {
-  NavLink
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { getCartList } from "./store/actions";
-
 
 class Cart extends React.Component {
   constructor() {
     super();
-    this.state = {
-    
-    };
+    this.state = {};
   }
 
   render() {
     return (
-      <div>
-        Cart
-        <ul>
-          {this.props.cartList.map(item => {
-            return (
-              <li key={item.cartItem}>
-                <NavLink exact activeClassName="active" to={`/Cart/${item.cartItem}`}>{item.cartItem}</NavLink>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <ul>
+        {this.props.cartList.map(item => {
+          return (
+            <li className="list-item" key={item.cartItem}>
+              <NavLink
+                exact
+                activeClassName="active"
+                to={`/Cart/${item.cartItem}`}
+              >
+                {item.cartItem}
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
     );
   }
 }
