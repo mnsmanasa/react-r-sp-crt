@@ -9,11 +9,10 @@ class CartItemDescription extends React.Component {
   }
 
   render() {
-    console.log(this.props.match.params.id, this.props.cartList);
     let cartItem = this.props.cartList.find(item => {
       return this.props.match.params.id === item.cartItem
     });
-    return <div>description: {cartItem.description}</div>;
+    return <div><i>Description</i>: {cartItem.description}</div>;
   }
 }
 
