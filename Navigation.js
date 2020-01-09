@@ -6,16 +6,17 @@ import {
   Route,
   useRouteMatch
 } from "react-router-dom";
-import Cart from './Cart';
-import Home from './Home';
-import CartFilters from './CartFilters';
-import CartItemDescription from './CartItemDescription';
-
+import Cart from "./Cart";
+import Home from "./Home";
+import CartFilters from "./CartFilters";
+import CartItemDescription from "./CartItemDescription";
+import Header from "./components/Header";
 
 class Navigation extends React.Component {
   render() {
     return (
-      <Router>    
+      <Router>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Cart" component={Cart} />
@@ -27,4 +28,4 @@ class Navigation extends React.Component {
   }
 }
 
-export default Navigation
+export default Navigation;

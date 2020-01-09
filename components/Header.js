@@ -1,13 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getCartList, addToCart } from "../store/actions";
+import {NavLink } from 'react-router-dom';
 
 class Header extends React.Component {
 
   render() {
     return (
       <header>
-        <div className="logo">SC</div>
+         <NavLink exact activeClassName="active" to="/Cart">
+              Cart
+            </NavLink>
         <div>
           Cart <span className="badge">{this.props.addedToCart? this.props.addedToCart.length: 0}</span>
         </div>

@@ -23,7 +23,6 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
-        <Header />
           <Navigation />
         </div>
       </Provider>
