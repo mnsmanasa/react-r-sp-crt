@@ -16,7 +16,7 @@ class Header extends React.Component {
           Cart
         </NavLink>
         <div>
-          Cart{" "}
+          <span>Cart </span>
           <span className="badge">
             {this.props.addedToCart
               ? this.props.addedToCart.reduce((acc, item) => {                
