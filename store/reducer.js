@@ -20,7 +20,8 @@ export const initialState = {
       id: "3",
       itemName: "C",
       description: "Description of 3",
-      thumbnail: "https://via.placeholder.com/150/602b9e"
+      thumbnail: "https://via.placeholder.com/150/602b9e",
+      count: 0
     },
     {
       id: "4",
@@ -52,13 +53,10 @@ export default function(state = initialState, action) {
     case GET_CARTLIST:
       return state.cartList;
     case ADD_TO_CART:
-      console.log(state.addedToCart);
+    debugger;
       return {
         ...state,
-        addedToCart: [
-          ...state.addedToCart,
-          { ...action.payload, noOfItems: action.noOfItems }
-        ]
+        addedToCart: action.payload
       };
     default:
       return state;

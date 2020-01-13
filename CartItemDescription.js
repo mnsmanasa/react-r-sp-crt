@@ -25,7 +25,6 @@ class CartItemDescription extends React.Component {
   removeNoOfItems = () => {
     if (this.state.noOfItems > 0) {
       this.setState({ noOfItems: Number(this.state.noOfItems) - 1 });
-      console.log(this.state.noOfItems);
     }
   };
 
@@ -34,8 +33,12 @@ class CartItemDescription extends React.Component {
   };
 
   addToCart = (id) => {
+    debugger
     if (this.state.noOfItems > 0) {
+      debugger
       this.props.cartList.filter(item => {return item.id === id}).map(item => item.count = this.state.noOfItems)
+      console.log(this.props.cartList)
+      this.props.addToCart(this.props.cartList)
     }
   };
 

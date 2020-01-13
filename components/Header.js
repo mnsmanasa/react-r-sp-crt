@@ -4,12 +4,13 @@ import { getCartList, addToCart } from "../store/actions";
 import { NavLink } from "react-router-dom";
 
 class Header extends React.Component {
+  constructor(){
+    super()
+  }
+  componentDidMount(){
+    console.log(this.props.cartList,'added')
+  }
   render() {
-    console.log(
-      this.props.addedToCart.reduce(function(acc, item) {
-        return acc + item.noOfItems;
-      }, 0)
-    );
     return (
       <header>
         <NavLink exact activeClassName="active" to="/Cart">
@@ -18,11 +19,11 @@ class Header extends React.Component {
         <div>
           <span>Cart </span>
           <span className="badge">
-            {this.props.addedToCart
-              ? this.props.addedToCart.reduce((acc, item) => {                
-                  return acc + item.noOfItems;
+            {this.props.cartList.reduce((acc, item) => {
+              debugger 
+                  return acc + item.count;
                 }, 0)
-              : 0}
+              }
           </span>
         </div>
       </header>
@@ -31,7 +32,8 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  addedToCart: state.addedToCart
+  addedToCart: state.addedToCart,
+  cartList: state.cartList
 });
 
 export default connect(
