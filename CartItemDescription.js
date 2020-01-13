@@ -33,9 +33,9 @@ class CartItemDescription extends React.Component {
     this.setState({ noOfItems: event.target.value });
   };
 
-  addToCart = () => {
+  addToCart = (id) => {
     if (this.state.noOfItems > 0) {
-      this.props.addToCart(this.state.item, this.state.noOfItems);
+      this.props.cartList.filter(item => {return item.id === id}).map(item => item.count = this.state.noOfItems)
     }
   };
 
@@ -61,7 +61,7 @@ class CartItemDescription extends React.Component {
           <button onClick={this.removeNoOfItems}>-</button>
         </div>
         <div>
-          <button className="add-btn" onClick={this.addToCart}>
+          <button className="add-btn" onClick={()=>this.addToCart(this.state.item.id)}>
             Add to Cart
           </button>
         </div>
