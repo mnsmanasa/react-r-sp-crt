@@ -64,3 +64,12 @@ ul{
   padding: 3px;
   text-align: center;
 }
+
+.shopping-cart-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bold{
+  font-weight: bold
+}

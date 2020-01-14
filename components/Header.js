@@ -13,14 +13,14 @@ class Header extends React.Component {
         <NavLink exact activeClassName="active" to="/Cart">
           Cart
         </NavLink>
-        <div>
+        <NavLink exact activeClassName="active" to="/ShoppingCart">
           <span>Cart </span>
           <span className="badge">
            {this.props.cartList.reduce((acc,item)=>{
              return (acc + item.count)
            }, 0)}
           </span>
-        </div>
+        </NavLink>
       </header>
     );
   }

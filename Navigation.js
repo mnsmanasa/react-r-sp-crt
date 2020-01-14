@@ -11,6 +11,7 @@ import Home from "./Home";
 import CartFilters from "./CartFilters";
 import CartItemDescription from "./CartItemDescription";
 import Header from "./components/Header";
+import ShoppingCart from "./ShoppingCart";
 
 class Navigation extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class Navigation extends React.Component {
           <Route exact path="/Cart" component={Cart} />
           <Route path="/Cart-filters" component={CartFilters} />
           <Route path={`/Cart/:id`} component={CartItemDescription} />
+          <Route path={`/ShoppingCart`} component={ShoppingCart} />
         </Switch>
       </Router>
     );
