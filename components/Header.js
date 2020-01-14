@@ -7,8 +7,8 @@ class Header extends React.Component {
   constructor(){
     super()
   }
-  componentDidMount(){
-    
+  componentDidUpdate(){
+    console.log('update')
   }
   render() {
     console.log(this.props.cartList)
@@ -21,7 +21,7 @@ class Header extends React.Component {
           <span>Cart </span>
           <span className="badge">
            {this.props.cartList.reduce((acc,item)=>{
-             return acc + item.count
+             return (acc + item.count)
            }, 0)}
           </span>
         </div>
