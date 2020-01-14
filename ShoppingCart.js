@@ -1,11 +1,16 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { getCartList, addToCart } from "./store/actions";
 
 class ShoppingCart extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      cartTotal: this.props.cartList.reduce((acc, item) => {
+        return acc + item.count;
+      }, 0)
+    };
   }
 
   render() {
@@ -15,20 +20,24 @@ class ShoppingCart extends React.Component {
           if (item.count > 0) {
             return (
               <div className="shopping-cart-container">
-                <div>{item.itemName}</div>
+                <NavLink exact activeClassName="active" to={`/Cart/${item.id}`}>{item.itemName}</NavLink>
                 <div>{item.count}</div>
               </div>
             );
           }
         })}
-        <div className="shopping-cart-container bold">
-          <div>Total</div>
-          <div>
-            {this.props.cartList.reduce((acc, item) => {
-              return acc + item.count;
-            }, 0)}
+        {this.state.cartTotal > 0 ? (
+          <div className="shopping-cart-container bold">
+            <div>Total</div>
+            <div>
+              {this.props.cartList.reduce((acc, item) => {
+                return acc + item.count;
+              }, 0)}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div>Sorry!! Your shopping cart is empty.</div>
+        )}
       </React.Fragment>
     );
   }
