@@ -57,7 +57,6 @@ export default function(state = initialState, action) {
         item.count = item.id === action.payload? action.count: item.count
         return item
       })
-      console.log(cart,'add cart')
       return { ...state, cartList: cart };
     default:
       return state;

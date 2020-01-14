@@ -7,9 +7,6 @@ class Header extends React.Component {
   constructor(){
     super()
   }
-  componentDidUpdate(){
-    console.log('update')
-  }
   render() {
     return (
       <header>
