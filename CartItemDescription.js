@@ -14,7 +14,10 @@ class CartItemDescription extends React.Component {
     let cartItem = this.props.cartList.find(item => {
       return this.props.match.params.id === item.id;
     });
-    this.setState({ item: cartItem });
+    this.setState({
+      item: cartItem,
+      noOfItems: cartItem.count != 0 ? cartItem.count : 1
+    });
   }
 
   addNoOfItems = () => {
@@ -32,9 +35,9 @@ class CartItemDescription extends React.Component {
     this.setState({ noOfItems: event.target.value });
   };
 
-  addToCart = (id) => {
-    if (this.state.noOfItems > 0) {      
-      this.props.addToCart(id,this.state.noOfItems)
+  addToCart = id => {
+    if (this.state.noOfItems > 0) {
+      this.props.addToCart(id, this.state.noOfItems);
     }
   };
 
@@ -60,7 +63,10 @@ class CartItemDescription extends React.Component {
           <button onClick={this.removeNoOfItems}>-</button>
         </div>
         <div>
-          <button className="add-btn" onClick={()=>this.addToCart(this.state.item.id)}>
+          <button
+            className="add-btn"
+            onClick={() => this.addToCart(this.state.item.id)}
+          >
             Add to Cart
           </button>
         </div>
