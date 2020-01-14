@@ -4,8 +4,8 @@ import { getCartList, addToCart } from "../store/actions";
 import { NavLink } from "react-router-dom";
 
 class Header extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
   }
   render() {
     return (
@@ -16,9 +16,9 @@ class Header extends React.Component {
         <NavLink exact activeClassName="active" to="/ShoppingCart">
           <span>Cart </span>
           <span className="badge">
-           {this.props.cartList.reduce((acc,item)=>{
-             return (acc + item.count)
-           }, 0)}
+            {this.props.cartList.reduce((acc, item) => {
+              return acc + item.count;
+            }, 0)}
           </span>
         </NavLink>
       </header>

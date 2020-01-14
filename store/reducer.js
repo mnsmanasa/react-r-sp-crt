@@ -53,10 +53,10 @@ export default function(state = initialState, action) {
     case GET_CARTLIST:
       return { ...state.cartList };
     case ADD_TO_CART:
-      var cart = state.cartList.map(item=> {
-        item.count = item.id === action.payload? action.count: item.count
-        return item
-      })
+      var cart = state.cartList.map(item => {
+        item.count = item.id === action.payload ? action.count : item.count;
+        return item;
+      });
       return { ...state, cartList: cart };
     default:
       return state;

@@ -1,18 +1,14 @@
-import React from 'react';
+import React from "react";
 
 class CartFilters extends React.Component {
   constructor() {
-    super()
-    this.state={
-
-    }
+    super();
+    this.state = {};
   }
 
   render() {
-    return (
-      <div>Cart Filters</div>
-    )
+    return <div>Cart Filters</div>;
   }
 }
 
-export default CartFilters
+export default CartFilters;

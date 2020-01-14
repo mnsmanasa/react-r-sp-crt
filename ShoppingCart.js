@@ -19,16 +19,16 @@ class ShoppingCart extends React.Component {
                 <div>{item.count}</div>
               </div>
             );
-          }          
+          }
         })}
         <div className="shopping-cart-container bold">
-            <div>Total</div>
-            <div>
-              {this.props.cartList.reduce((acc, item) => {
-                return acc + item.count;
-              }, 0)}
-            </div>
+          <div>Total</div>
+          <div>
+            {this.props.cartList.reduce((acc, item) => {
+              return acc + item.count;
+            }, 0)}
           </div>
+        </div>
       </React.Fragment>
     );
   }
