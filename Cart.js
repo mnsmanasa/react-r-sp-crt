@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { getCartList } from "./store/actions";
+import { getCartList, addToCart } from "./store/actions";
 
 class Cart extends React.Component {
   constructor() {
@@ -15,11 +15,7 @@ class Cart extends React.Component {
         {this.props.cartList.map(item => {
           return (
             <li className="list-item" key={item.id}>
-              <NavLink
-                exact
-                activeClassName="active"
-                to={`/Cart/${item.id}`}
-              >
+              <NavLink exact activeClassName="active" to={`/Cart/${item.id}`}>
                 {item.itemName}
               </NavLink>
             </li>
@@ -30,12 +26,11 @@ class Cart extends React.Component {
   }
 }
 
-// export default Cart;
 const mapStateToProps = state => ({
   cartList: state.cartList
 });
 
 export default connect(
   mapStateToProps,
-  { getCartList }
+  { getCartList, addToCart }
 )(Cart);

@@ -8,8 +8,10 @@ class Header extends React.Component {
     super()
   }
   componentDidMount(){
+    
   }
   render() {
+    console.log(this.props.cartList)
     return (
       <header>
         <NavLink exact activeClassName="active" to="/Cart">
@@ -18,7 +20,9 @@ class Header extends React.Component {
         <div>
           <span>Cart </span>
           <span className="badge">
-           0
+           {this.props.cartList.reduce((acc,item)=>{
+             return acc + item.count
+           }, 0)}
           </span>
         </div>
       </header>
@@ -27,7 +31,6 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  addedToCart: state.addedToCart,
   cartList: state.cartList
 });
 
