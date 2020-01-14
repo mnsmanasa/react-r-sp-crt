@@ -8,7 +8,6 @@ class Header extends React.Component {
     super()
   }
   componentDidMount(){
-    console.log(this.props.cartList,'added')
   }
   render() {
     return (

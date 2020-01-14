@@ -33,12 +33,8 @@ class CartItemDescription extends React.Component {
   };
 
   addToCart = (id) => {
-    debugger
-    if (this.state.noOfItems > 0) {
-      debugger
-      this.props.cartList.filter(item => {return item.id === id}).map(item => item.count = this.state.noOfItems)
-      console.log(this.props.cartList)
-      this.props.addToCart(this.props.cartList)
+    if (this.state.noOfItems > 0) {      
+      this.props.addToCart(id,this.state.noOfItems)
     }
   };
 

@@ -4,7 +4,8 @@ export const getCartList = () => ({
   type: GET_CARTLIST
 });
 
-export const addToCart = (item) => ({
+export const addToCart = (id,count) => ({
   type: ADD_TO_CART,
-  payload: item
+  payload: id,
+  count: count
 })

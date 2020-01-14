@@ -53,11 +53,12 @@ export default function(state = initialState, action) {
     case GET_CARTLIST:
       return state.cartList;
     case ADD_TO_CART:
-    debugger;
-      return {
-        ...state,
-        addedToCart: action.payload
-      };
+      state.cartList
+        .filter(item => {
+          return item.id === action.payload;
+        })
+        .map(item => (item.count = action.count));
+      return state.cartList;
     default:
       return state;
   }
