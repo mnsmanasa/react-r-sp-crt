@@ -51,7 +51,7 @@ export const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_CARTLIST:
-      return {...state, cartList: state.cartList};
+      return {...state}
     case ADD_TO_CART:
     console.log(action)
       state.cartList
@@ -60,7 +60,7 @@ export default function(state = initialState, action) {
         })
         .map(item => (item.count = action.count));
         console.log(state.cartList,'add')
-      return {...state, cartList: state.cartList};
+      return {...state};
     default:
       return state;
   }
