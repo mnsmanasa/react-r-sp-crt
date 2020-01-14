@@ -51,16 +51,14 @@ export const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_CARTLIST:
-      return {...state}
+      return { ...state.cartList };
     case ADD_TO_CART:
-    console.log(action)
-      state.cartList
-        .filter(item => {
-          return item.id === action.payload;
-        })
-        .map(item => (item.count = action.count));
-        console.log(state.cartList,'add')
-      return {...state};
+      var cart = state.cartList.map(item=> {
+        item.count = item.id === action.payload? action.count: item.count
+        return item
+      })
+      console.log(cart,'add cart')
+      return { ...state, cartList: cart };
     default:
       return state;
   }

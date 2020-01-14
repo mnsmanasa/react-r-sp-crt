@@ -11,7 +11,6 @@ class Header extends React.Component {
     console.log('update')
   }
   render() {
-    console.log(this.props.cartList)
     return (
       <header>
         <NavLink exact activeClassName="active" to="/Cart">
