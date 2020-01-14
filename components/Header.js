@@ -18,11 +18,7 @@ class Header extends React.Component {
         <div>
           <span>Cart </span>
           <span className="badge">
-            {this.props.cartList.reduce((acc, item) => {
-              debugger 
-                  return acc + item.count;
-                }, 0)
-              }
+           0
           </span>
         </div>
       </header>
