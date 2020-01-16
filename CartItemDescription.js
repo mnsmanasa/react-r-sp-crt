@@ -22,7 +22,6 @@ class CartItemDescription extends React.Component {
 
   addNoOfItems = () => {
     this.setState({ noOfItems: Number(this.state.noOfItems) + 1 });
-    console.log(this.state.noOfItems);
   };
 
   removeNoOfItems = () => {
