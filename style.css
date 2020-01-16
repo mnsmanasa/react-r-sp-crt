@@ -2,8 +2,10 @@ h1, p {
   font-family: Lato;
 }
 body{
-  margin: 0;
+  position: relative;
   background-color:#fbeaea;
+  max-width: 997px;
+  margin: 0 auto;
 }
 header{
   display: flex;
@@ -40,7 +42,10 @@ ul{
   margin: 10px;
   background-color: #f5d5d5;
 }
-
+.item-description {
+    background-color:#fbeaea;
+    padding: 10px 0;
+}
 .item-description input{
     width: 30px;
     text-align: center;
