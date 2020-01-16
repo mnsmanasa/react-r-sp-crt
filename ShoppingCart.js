@@ -20,7 +20,9 @@ class ShoppingCart extends React.Component {
           if (item.count > 0) {
             return (
               <div className="shopping-cart-container">
-                <NavLink exact activeClassName="active" to={`/Cart/${item.id}`}>{item.itemName}</NavLink>
+                <NavLink exact activeClassName="active" to={`/Cart/${item.id}`}>
+                  {item.itemName}
+                </NavLink>
                 <div>{item.count}</div>
               </div>
             );
