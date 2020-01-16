@@ -45,7 +45,7 @@ class CartItemDescription extends React.Component {
     return (
       <div className="text-center item-description">
         <div>
-          <i>Description of </i>: {this.state.item.itemName}
+          <i>Product </i>: {this.state.item.itemName}
         </div>
         <div>
           <img src={this.state.item.thumbnail} height="100" width="100" />

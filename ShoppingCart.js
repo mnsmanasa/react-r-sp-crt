@@ -29,7 +29,7 @@ class ShoppingCart extends React.Component {
           }
         })}
         {this.state.cartTotal > 0 ? (
-          <div className="shopping-cart-container bold">
+          <div className="shopping-cart-container bold total">
             <div>Total</div>
             <div>
               {this.props.cartList.reduce((acc, item) => {
