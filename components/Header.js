@@ -24,9 +24,11 @@ class Header extends React.Component {
             />
           </span>
           <span className="badge">
-            {this.props.cartList.reduce((acc, item) => {
-              return acc + item.count;
-            }, 0)}
+            <b>
+              {this.props.cartList.reduce((acc, item) => {
+                return acc + item.count;
+              }, 0)}
+            </b>
           </span>
         </NavLink>
       </header>
